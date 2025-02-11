@@ -7,7 +7,7 @@ import { error } from 'ajv/dist/vocabularies/applicator/dependencies';
 const FoundedMovie = () => {
     const { searchTitle } = useParams();
 
-    const API_Key="82b8ef351212cc03c2fd4298204b1b96";
+    const API_Key=process.env.REACT_APP_MOVIE_API_KEY;
 
     const [movieName,setMovieName]=useState(searchTitle);
 
