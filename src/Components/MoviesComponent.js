@@ -10,7 +10,7 @@ const MoviesComponent = () => {
   const [genresList, setGenresList] = useState([]);
   const [selectedGenre, setSelectedGenre] = useState("");
 
-  const API_Key =process.env.REACT_APP_API_KEY;
+  const API_Key ="82b8ef351212cc03c2fd4298204b1b96";
 
   useEffect(() => {
     Promise.all([Axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${API_Key}`),
