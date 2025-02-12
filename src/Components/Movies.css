@@ -1,0 +1,76 @@
+.movieDiv{
+    background-color: rgb(228, 244, 204);
+    margin-top: 0;
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 170px;
+}
+
+.movieInput{
+    width: 100%;
+   position: relative;
+   top:90px;
+}
+
+.select{
+    width: 200px;
+    margin-top: 5px;
+}
+.icon{
+    position: absolute;
+    right: 27px;
+    top:5px;
+    font-size: larger;
+}
+
+.moviesContainer{
+    width:100%;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 40px;
+    column-gap: 10px;
+    justify-content: space-evenly;
+}
+
+.movieCard{
+    width:350px;
+    height:fit-content;
+    position:relative;
+    top:130px;
+  
+}
+
+.movieImg{
+    width:100%;
+    height:100%;
+    
+}
+
+.movieImg img{
+    width: 100%;
+    height: 430px;
+    border-radius: 10px;
+}
+
+
+.movieData{
+    display: flex;
+}
+
+.movieTitle{
+    font-size:17px;
+    font-weight: bolder;
+    width: 80%;
+    padding: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.moreDetails{
+    font-size: 15px;
+    width: 20%;
+    position:relative;
+    padding-top: 12px;
+    font-weight: bolder;
+    font-family: cursive;
+}
