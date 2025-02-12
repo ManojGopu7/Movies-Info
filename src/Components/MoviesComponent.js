@@ -13,7 +13,7 @@ const MoviesComponent = () => {
   const API_Key=process.env.REACT_APP_MOVIE_API_KEY;
 
   useEffect(() => {
-    Promise.all([Axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${API_Key}`),
+    Promise.all([Axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${API_Key}`),
     Axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${API_Key}`)]).then(([moviesResponse, genresResponse]) => {
       setMovies(moviesResponse.data.results);
       setGenresList(genresResponse.data.genres);

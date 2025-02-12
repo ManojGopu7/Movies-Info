@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import "./FoundedMovie.css";
 import Axios from 'axios';
-import { error } from 'ajv/dist/vocabularies/applicator/dependencies';
 
 const FoundedMovie = () => {
     const { searchTitle } = useParams();
@@ -15,12 +14,10 @@ const FoundedMovie = () => {
 
     const [getMovie,setGetMovie]=useState([]);
 
-    const [genreData,setGenreData]=useState([]);
-
-    
+    const [genreData,setGenreData]=useState([]);    
 
     useEffect(() => {
-        Promise.all([Axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${API_Key}`),
+        Promise.all([Axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${API_Key}`),
         Axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${API_Key}`)]).then(([movieResponse,genreResponse])=>{
             setMovieList(movieResponse.data.results);
             setGenreData(genreResponse.data.genres);
