@@ -1,60 +1,116 @@
-
-.fMovieDiv{
-    background-color:beige;
+.fMovieDiv {
+    background-color: beige;
     height: fit-content;
     width: 100%;
-    height: 700px;
+    padding: 20px 0;
+    padding-bottom: 133px;
 }
 
-.errorDiv{
+.ferrorDiv {
     position: relative;
-    width:100%;
-    top:70px;
-    height: 600px;
+    width: 100%;
+    top: 70px;
+    height: auto;
+    text-align: center;
 }
 
-.fmovieData{
-    width:100%;
-    padding:30px;
+/* Movie Card */
+.fmovieData {
+    width: 100%;
+    padding: 30px;
     border-radius: 20px;
-    height:600px;
-    position: relative;
-    top:70px;
-    box-shadow: 0 4px 8px hsla(0,0%,0%,0.2);
-    display: flex;
-}
-.fmovieImg{
-    width:40%;
-    height: 100%;
-    position: relative;
-   
-}
-
-.fmovieImg img{
-    width:100%;
-    height: 100%;
-    background-color:beige;
-}
-
-.fmovieDetails{
-    position: absolute;
-    width:60%;
     height: fit-content;
-    left: 33%;
-    top:50px;
-    margin: 100px;
-    padding: 40px;
-    font-size: larger;
-    border-radius: 3%;
+    position: relative;
+    top: 70px;
+    box-shadow: 0 4px 8px hsla(0, 0%, 0%, 0.2);
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    background: beige;
+    margin-bottom: 20px;
 }
 
-.fmovieDetails h5{
+/* Image */
+.fmovieImg {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Space below image */
+}
+
+.fmovieImg img {
+    width: 100%;
+    height: 455px;
+    border-radius: 10px;
+}
+
+/* Details */
+.fmovieDetails {
+    font-size: 1rem;
+    width: 100%;
+    margin-top: 27px;
+}
+
+.fmovieDetails h5 {
     font-weight: bolder;
 }
 
-.backbtn{
-    position: absolute;
-    top:525px;
-    left:575px;
-    background-color: rgb(222, 224, 224);
+/* Back Button */
+.backbtn {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Make Back Button Full Width on Small Screens */
+.backbtn .btn {
+    width: 100%;
+    max-width: 200px;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+    .fmovieData {
+        flex-wrap: nowrap; /* Prevents wrapping on medium screens */
+    }
+
+    .fmovieImg {
+        flex: 0 0 40%;
+        max-width: 40%;
+    }
+
+    .fmovieDetails {
+        flex: 0 0 60%;
+        max-width: 100%;
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .fmovieImg img {
+        max-width: 80%; /* Reduce image size on small screens */
+    }
+    
+    .fmovieDetails {
+        text-align: center;
+    }
+    
+    .backbtn {
+        position: static; /* Remove absolute positioning */
+    }
+}
+
+@media (max-width: 480px) {
+    .fmovieDetails h5 {
+        font-size: 18px;
+    }
+
+    .fmovieDetails p {
+        font-size: 14px;
+    }
+
+    .backbtn .btn {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
 }

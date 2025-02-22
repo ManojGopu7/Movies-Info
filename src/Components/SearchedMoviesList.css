@@ -1,0 +1,16 @@
+.SearchedMoviesList{
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 170px;
+    background-color: beige;
+}
+
+.titleInput{
+    position: relative;
+    top:90px;
+}
+
+.icon:hover{
+    color: blue;
+    cursor: pointer;
+}

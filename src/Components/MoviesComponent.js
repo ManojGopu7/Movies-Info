@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import Axios from 'axios';
 import "./Movies.css"
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 
 const MoviesComponent = () => {
 
+  const naviagte=useNavigate;
   const [movies, setMovies] = useState([]);
   const [searchTitle, setSearchTitle] = useState(" ");
   const [genresList, setGenresList] = useState([]);
@@ -24,11 +25,12 @@ const MoviesComponent = () => {
 
   const filteredMovies = selectedGenre ? movies.filter((movie) => movie.genre_ids.includes(parseInt(selectedGenre))) : movies;
 
+
   return (
     <div className='movieDiv'>
       <div className='container movieInput'>
         <input type="text" placeholder="Search by Title...." onChange={(e) => { setSearchTitle(e.target.value) }} className='form-control input' required/>
-        <div className='icon'><Link to={searchTitle.trim()?`/movieFounded/${searchTitle}`:"#"}><i className='bi bi-search'></i></Link></div>
+        <div className='icon'><Link to={searchTitle.trim()?`/moviesList/${searchTitle}`:"#"} className='iconLink'><i className='bi bi-search'></i></Link></div>
         <marquee behavior="scroll" direction="left" style={{color:"red",fontWeight:"bold"}}>
           Note: This page contains only a limited number of movies.
         </marquee>
@@ -36,15 +38,15 @@ const MoviesComponent = () => {
           <select className='form-control' value={selectedGenre} onChange={(e) => setSelectedGenre(e.target.value)}>
             <option value="">Genres</option>
             {
-              genresList.map((genre) => (
+              (genresList.map((genre) => (
                 <option key={genre.id} value={genre.id}>{genre.name}</option>
-              ))
+              )))
             }
           </select></div>
       </div>
       <div className='moviesContainer'>
-        {
-          filteredMovies.map((movie) =>
+        {filteredMovies.length>0?
+          (filteredMovies.map((movie) =>
           (<div className='movieCard' key={movie.id}>
             <div className='movieImg'>
               <Link><img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="Image Not Found" /></Link>
@@ -57,7 +59,7 @@ const MoviesComponent = () => {
                 <Link to={`/movieFounded/${movie.title}`}><small>More info</small></Link>
               </div>
             </div>
-          </div>))
+          </div>))):<h3 className='mt-5 pt-5'>No Results Found..</h3>
         }
       </div>
     </div>
