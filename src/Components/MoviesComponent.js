@@ -59,7 +59,7 @@ const MoviesComponent = () => {
                 <Link to={`/movieFounded/${movie.title}`}><small>More info</small></Link>
               </div>
             </div>
-          </div>))):<h3 className='mt-5 pt-5'>No Results Found..</h3>
+          </div>))):<h3 className='mt-5 pt-5'>Loading...</h3>
         }
       </div>
     </div>

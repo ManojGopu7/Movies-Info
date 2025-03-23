@@ -47,6 +47,10 @@
     top:130px;
   
 }
+/* .movieCard:hover{
+    transform: scale(1.05);
+    transition: 0.1s linear;
+} */
 
 .movieImg{
     width:100%;
@@ -60,6 +64,10 @@
     border-radius: 10px;
 }
 
+.movieImg img:hover{
+    transform: scale(1.05);
+    transition: 0.25s linear;
+}
 
 .movieData{
     display: flex;

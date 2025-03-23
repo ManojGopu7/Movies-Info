@@ -68,7 +68,7 @@ const SearchedMoviesList = () => {
                         </div>
                     ))
                 ) : (
-                    <h3 className='mt-5 pt-5'>No Results Found..</h3>
+                    <h3 className='mt-5 pt-5'>Loading...</h3>
                 )}
             </div>
         </div>
